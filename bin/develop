@@ -1,0 +1,14 @@
+#!/srv/env/pyenv/versions/2.7.5/bin/python
+
+import sys
+sys.path[0:0] = [
+    '/srv/cache/eggs/mr.developer-1.21-py2.7.egg',
+    '/srv/cache/eggs/zc.buildout-1.7.1-py2.7.egg',
+    '/srv/cache/eggs/setuptools-0.6c11-py2.7.egg',
+    ]
+
+
+import mr.developer.develop
+
+if __name__ == '__main__':
+    sys.exit(mr.developer.develop.develop())

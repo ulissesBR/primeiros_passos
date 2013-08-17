@@ -1,0 +1,11 @@
+#!/srv/env/pyenv/versions/2.7.5/bin/python -S
+import os
+import sys
+
+argv = [sys.executable] + sys.argv[1:]
+environ = os.environ.copy()
+path = '/srv/primeiros_passos/parts/instance'
+if environ.get('PYTHONPATH'):
+    path = os.pathsep.join([path, environ['PYTHONPATH']])
+environ['PYTHONPATH'] = path
+os.execve(sys.executable, argv, environ)
